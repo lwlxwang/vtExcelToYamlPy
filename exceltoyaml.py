@@ -51,6 +51,8 @@ def processfile(filename):
     
     # print(yaml.dump(all_data))
     result_file = filename[:-4]+".yaml";
+    os.makedirs("output", exist_ok=True)
+    result_file = os.path.join("./output/", result_file)
     with open(result_file, "w") as writer:
         writer.write(yaml.dump(all_data,width=1000))
 
